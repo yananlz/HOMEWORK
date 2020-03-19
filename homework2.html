@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf/8" />
+    <title>web存储</title>
+    <style type="text/css">
+        li {
+            float: left;
+            list-style-type: square;
+            inline-size: 30px;
+            font-size: 40px;
+        }
+        #header {
+            width: 540px;
+            height: 80px;
+            border-width: 2px;
+            border-color: gray;
+            border-style: solid;
+            padding-left: 20px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <fieldset style="width:560px;">
+        <legend style="font-size:30px;font-weight: bloder;font-family:SimHei;color:red">网页换肤</legend>
+        <div id="header">
+            <ul id="im">
+                <li style="color:red;"></li>
+                <li style="color:teal;"></li>
+                <li style="color:violet;"></li>
+                <li style="color:sienna;"></li>
+                <li style="color:skyblue;"></li>
+                <li style="color:slateblue;"></li>
+            </ul>
+        </div>
+        <div id="head">
+            <span>LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，
+                    下次打开浏览器访问网站时仍然可以继续使用。
+                </span>
+        </div>
+    </fieldset>
+</body>
+<script>
+    var head = document.getElementById("head");
+    var im = document.getElementById("im");
+    var obj_lis = im.getElementsByTagName("li");
+    var getLocalColor = window.localStorage.getItem("localColor");
+    window.onload = function() {
+        if (getLocalColor) {
+            head.style.backgroundColor = getLocalColor;
+            for (a = 0; a < obj_lis.length; a++) {
+                if (obj_lis[a].style.color == window.localStorage.getItem("localColor")) {
+                    var n = -10 + "px";
+                    head.style.backgroundColor = window.localStorage.getItem("localColor");
+                    obj_lis[a].style.marginTop = n;
+                } else {
+
+                }
+            }
+        } else {
+            function changeBackgroundColor7() {
+                head.style.backgroundColor = "red";
+                obj_lis[0].style.marginTop = x;
+                window.localStorage.setItem("localColor", "red");
+            }
+            changeBackgroundColor7();
+        }
+    }
+    var x = -10 + "px";
+    obj_lis[0].onclick = function changeBackgroundColor1() {
+        head.style.backgroundColor = "red";
+        this.style.marginTop = x;
+        window.localStorage.setItem("localColor", "red");
+    }
+    obj_lis[1].onclick = function changeBackgroundColor2() {
+        head.style.backgroundColor = "teal";
+        this.style.marginTop = x;
+        window.localStorage.setItem("localColor", "teal");
+    }
+    obj_lis[2].onclick = function changeBackgroundColor3() {
+        head.style.backgroundColor = "violet";
+        this.style.marginTop = x;
+        window.localStorage.setItem("localColor", "violet");
+    }
+    obj_lis[3].onclick = function changeBackgroundColor4() {
+        head.style.backgroundColor = "sienna";
+        this.style.marginTop = x;
+        window.localStorage.setItem("localColor", "sienna");
+    }
+    obj_lis[4].onclick = function changeBackgroundColor5() {
+        head.style.backgroundColor = "skyblue";
+        this.style.marginTop = x;
+        window.localStorage.setItem("localColor", "skyblue");
+    }
+    obj_lis[5].onclick = function changeBackgroundColor6() {
+        head.style.backgroundColor = "slateblue";
+        this.style.marginTop = x;
+        window.localStorage.setItem("localColor", "slateblue");
+    }
+    for (i = 0; i < obj_lis.length; i++) {
+        obj_lis[i].onmouseout = function changePosition() {
+            var y = 0 + "px";
+            this.style.marginTop = y;
+        }
+    }
+</script>
+</html>
