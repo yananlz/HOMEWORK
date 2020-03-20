@@ -68,41 +68,60 @@
         }
     }
     var x = -10 + "px";
+    var y=0+"px";
     obj_lis[0].onclick = function changeBackgroundColor1() {
+        for(i=0;i<obj_lis.length;i++){
+            obj_lis[i].style.marginTop=y;
+        }
         head.style.backgroundColor = "red";
         this.style.marginTop = x;
         window.localStorage.setItem("localColor", "red");
     }
     obj_lis[1].onclick = function changeBackgroundColor2() {
+        for(i=0;i<obj_lis.length;i++){
+            obj_lis[i].style.marginTop=y;
+        }
         head.style.backgroundColor = "teal";
         this.style.marginTop = x;
         window.localStorage.setItem("localColor", "teal");
     }
     obj_lis[2].onclick = function changeBackgroundColor3() {
+        for(i=0;i<obj_lis.length;i++){
+            obj_lis[i].style.marginTop=y;
+        }
         head.style.backgroundColor = "violet";
         this.style.marginTop = x;
         window.localStorage.setItem("localColor", "violet");
     }
     obj_lis[3].onclick = function changeBackgroundColor4() {
+        for(i=0;i<obj_lis.length;i++){
+            obj_lis[i].style.marginTop=y;
+        }
         head.style.backgroundColor = "sienna";
         this.style.marginTop = x;
         window.localStorage.setItem("localColor", "sienna");
     }
     obj_lis[4].onclick = function changeBackgroundColor5() {
+        for(i=0;i<obj_lis.length;i++){
+            obj_lis[i].style.marginTop=y;
+        }
         head.style.backgroundColor = "skyblue";
         this.style.marginTop = x;
         window.localStorage.setItem("localColor", "skyblue");
     }
     obj_lis[5].onclick = function changeBackgroundColor6() {
+        for(i=0;i<obj_lis.length;i++){
+            obj_lis[i].style.marginTop=y;
+        }
         head.style.backgroundColor = "slateblue";
         this.style.marginTop = x;
         window.localStorage.setItem("localColor", "slateblue");
     }
-    for (i = 0; i < obj_lis.length; i++) {
-        obj_lis[i].onmouseout = function changePosition() {
-            var y = 0 + "px";
-            this.style.marginTop = y;
-        }
-    }
+//     for (i = 0; i < obj_lis.length; i++) {
+//         obj_lis[i].onmouseout = function changePosition() {
+//             var y = 0 + "px";
+//             this.style.marginTop = y;
+//         }
+//     }
 </script>
 </html>
