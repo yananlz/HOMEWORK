@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>照片墙</title>
+    <style>
+        #constainer {
+            width: 1200px;
+            height: 700px;
+            background-image: url(images/bg3.JPG);
+        }
+        
+        p {
+            margin-top: 70px;
+            margin-left: 50px;
+            position: absolute;
+            z-index: 20;
+        }
+        
+        .same {
+            width: 150px;
+            height: 70px;
+            border-top: 5px solid white;
+            border-left: 5px solid white;
+            border-bottom: 30px solid white;
+            border-right: 5px solid white;
+            background-size: cover;
+            position: relative;
+            z-index: 10;
+        }
+        /* 第一个图片样式 */
+        
+        #one {
+            transform: translate(30px, 150px) rotate(3deg);
+            background-image: url(images/11.jpg);
+        }
+        
+        #one:hover {
+            transform: translate(30px, 150px) rotate(0deg) scale(1.5, 1.5);
+        }
+        /* 第二个图片样式 */
+        
+        #two {
+            transform: translate(220px, 40px) rotate(-2deg);
+            background-image: url(images/22.JPG);
+        }
+        
+        #two:hover {
+            transform: translate(220px, 40px) rotate(0deg) scale(1.5, 1.5);
+        }
+        /* 第三个图片样式 */
+        
+        #three {
+            transform: translate(420px, -70px) rotate(-1deg);
+            background-image: url(images/33.JPG);
+        }
+        
+        #three:hover {
+            transform: translate(420px, -70px) rotate(0deg) scale(1.5, 1.5);
+        }
+        /* 第四张图片样式 */
+        
+        #four {
+            transform: translate(620px, -175px) rotate(2deg);
+            background-image: url(images/44.JPG);
+        }
+        
+        #four:hover {
+            transform: translate(620px, -175px) rotate(0deg) scale(1.5, 1.5);
+        }
+        /* 第五张图片样式 */
+        
+        #five {
+            transform: translate(810px, -280px) rotate(-1deg);
+            background-image: url(images/55.JPG);
+        }
+        
+        #five:hover {
+            transform: translate(810px, -280px) rotate(0deg) scale(1.5, 1.5);
+        }
+        /* 第六张图片样式 */
+        
+        #six {
+            transform: translate(1000px, -390px) rotate(-2deg);
+            background-image: url(images/66.JPG);
+        }
+        
+        #six:hover {
+            transform: translate(1000px, -390px) rotate(0deg) scale(1.5, 1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="constainer">
+        <div id="one" class="same">
+            <p id="wordone">相识</p>
+        </div>
+        <div id="two" class="same">
+            <p id="wordtwo">凝视</p>
+        </div>
+        <div id="three" class="same">
+            <p id="wordthree">甜睡</p>
+        </div>
+        <div id="four" class="same">
+            <p id="wordfour">逗乐</p>
+        </div>
+        <div id="five" class="same">
+            <p id="wordfive">奔跑</p>
+        </div>
+        <div id="six" class="same">
+            <p id="wordsix">漠视</p>
+        </div>
+    </div>
+</body>
+
+</html>
