@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>改正</title>
+    <style>
+        li {
+            list-style: none;
+        }
+        
+        .outer {
+            height: 1180px;
+            width: 940px;
+            margin: 50px auto;
+            position: relative;
+        }
+        
+        .img li {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .num {
+            position: absolute;
+            /* text-align: center; */
+            width: 1000px;
+            top: 900px;
+            /* margin-top: 1000px; */
+        }
+        
+        .num li {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: darkgray;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+            margin: 0 20px;
+        }
+        
+        .btn {
+            position: absolute;
+            width: 20px;
+            height: 50px;
+            background-color: darkgray;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            top: 50%;
+            margin-top: -25px;
+            display: none;
+        }
+        
+        .left_btn {
+            left: 0px;
+        }
+        
+        .right_btn {
+            left: 1160px;
+            z-index: 4;
+        }
+        
+        .outer:hover .btn {
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .current {
+            background: yellow !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="outer">
+
+        <ul class="img">
+            <li>
+                <a><img src="images/1.jpg"></a>
+            </li>
+            <li>
+                <a><img src="images/2.jpg"></a>
+            </li>
+            <li>
+                <a><img src="images/3.jpg"></a>
+            </li>
+            <li>
+                <a><img src="images/4.jpg"></a>
+            </li>
+            <li>
+                <a><img src="images/5.jpg"></a>
+            </li>
+            <li>
+                <a><img src="images/6.jpg"></a>
+            </li>
+            <li>
+                <a><img src="images/7.jpg"></a>
+            </li>
+            <li>
+                <a><img src="images/8.jpg"></a>
+            </li>
+        </ul>
+
+
+        <ul class="num">
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="left_btn btn">
+            <</div>
+                <div class="right_btn btn">></div>
+        </div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    var index = 0;
+    $(".num li").mousemove(function() {
+        $(this).addClass("current").siblings().removeClass("current");
+        index = $(this).index();
+        $(".img li").eq(index).stop().fadeIn(1000).siblings().stop().fadeOut(2000);
+    });
+
+    var time = setInterval(moveR, 2000);
+
+    function moveR() {
+        index++;
+        if (index == 9) {
+            index = 0
+        }
+        $(".num li").eq(index).addClass("current").siblings().removeClass("current");
+        $(".img li").eq(index).stop().fadeIn(1000).siblings().stop().fadeOut(2000);
+    };
+
+    $(".outer").hover(function() {
+            clearInterval(time);
+        },
+        function() {
+            time = setInterval(moveR, 2000);
+        });
+
+    $(".right_btn").click(function() {
+        moveR();
+    });
+
+    function moveL() {
+        index--;
+        if (index == -1) {
+            index = 8
+        }
+        $(".num li").eq(index).addClass("current").siblings().removeClass("current");
+        $(".img li").eq(index).stop().fadeIn(2000).siblings().stop().fadeOut(2000);
+    }
+    $(".left_btn").click(function() {
+        moveL();
+    });
+</script>
+
+</html>
